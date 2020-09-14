@@ -1,4 +1,4 @@
-const staticVersion = "dev-site-v2";
+const staticVersion = "dev-site-v0.0";
 const assets = [
   "/",
   "/index.html",
