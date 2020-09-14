@@ -1,0 +1,168 @@
+// 
+@import './reset';
+@import './variables';
+@import './house';
+
+body {
+  background-color: $bgcolor;
+  color: $textcolor;
+  font-size: $fontsize;
+  font-family: $font;
+  margin: 0px;
+  text-align: justify;
+}
+
+.nav {
+  height: 50px;
+  width: 100%;
+  background-color: $navbgcolor;
+  position: relative;
+
+  .nav-header {
+    display: inline;
+
+    .nav-title {
+      display: inline-block;
+      font-size: $fontsizebg;
+      color: $bgcolor;
+      padding: 10px 10px 10px 10px;
+    }
+  }
+  
+  .nav-btn {
+    display: none;
+  }
+
+  .nav-links {
+    display: inline;
+    font-size: 18px;
+
+    a {
+      display: inline-block;
+      padding: 13px 10px 13px 10px;
+      text-decoration: none;
+      color: #fff;
+    }
+
+    a:hover {
+      background-color:$hoverbgcolor;
+    }
+  }
+
+  #nav-check {
+    display: none;
+  }
+}
+
+
+
+@media (max-width:600px) {
+  .nav {
+    .nav-btn {
+      display: inline-block;
+      position: absolute;
+      right: 0px;
+      top: 0px;
+
+      label {
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        padding: 13px;
+
+        span {
+          display: block;
+          width: 25px;
+          height: 10px;
+          border-top: 2px solid #eee;
+        }
+      }
+    }
+
+    .nav-links {
+      position: absolute;
+      display: block;
+      width: 100%;
+      background-color: #333;
+      height: 0px;
+      transition: all 0.3s ease-in;
+      overflow-y: hidden;
+      top: 50px;
+      left: 0px;
+
+      a {
+        display: block;
+        width: 100%;
+      }
+    }
+  }
+  .nav > .nav-btn > label:hover,.nav  #nav-check:checked ~ .nav-btn > label {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+
+  .nav > #nav-check:not(:checked) ~ .nav-links {
+    height: 0px;
+  }
+  .nav > #nav-check:checked ~ .nav-links {
+    height: calc(100vh - 50px);
+    overflow-y: auto;
+  }
+}
+
+footer {
+  padding: 10px 20px;
+  background: $navbgcolor;
+  color: $navtextcolor;
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: $bgcolor;
+  padding: 10px;
+}
+.grid-item {
+  background-color: $bgcolor;
+  border: 1px solid $navbgcolor;
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+
+/* css */
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 10px;
+  border: 1px solid $navbgcolor;
+  background-color:#aaa;
+  height: 100px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column2 {
+  @extend .column;
+  background-color: #bbb;
+}
+
+.column3 {
+  @extend .column;
+  background-color: #ccc;
+}
+
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}

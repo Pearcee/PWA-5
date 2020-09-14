@@ -1,0 +1,55 @@
+/**---------------
+Below are CSS items for SVG
+---------------**/
+
+/*Fill (Color) and Stroke (Outline) are applied to PATH*/
+svg#catnip path{ 
+    /*Similar to Color*/
+    fill:brown!important;
+    /*Outline effect around house svg*/
+    stroke:gold!important;
+    /*transform: rotate(45deg);*/
+  
+    /*Thickness of Stroke (Outline) surrounding House svg.  NOTE:  Looks like % (.5, 6).  PX works, but not using here.*/
+    stroke-width: .2!important;
+  }  
+    
+  /*Size apparently NOT applied to path, but to 
+  specific svg element?*/
+  svg#catnip{
+    /*
+    width: 200px!important;
+    height: 200px!important;
+    */
+    width: 20%!important;
+    height: 20%!important;
+    /*Changes thickness of border of box AROUND Svg image...or color.  Not the outline, but the box AROUND the house.*/
+    /*border: 3px solid #ddd;*/
+  }
+  
+  /*Hover now working*/
+  svg#catnip path:hover{fill:orange!important;stroke:brown!important;}
+  
+  /**---------------
+  Below are CSS items that are NOT SVG
+
+  
+  body { 
+    background-color: #bad0b8;
+    background-image: -webkit-linear-gradient(right, #FC7864, #FDA366);
+    background-image: -moz-linear-gradient(right, #FC7864, #FDA366);
+    background-image: -o-linear-gradient(right, #FC7864, #FDA366);
+    background-image: -ms-linear-gradient(right, #FC7864, #FDA366);
+    background-image: linear-gradient(right, #FC7864, #FDA366);
+  }
+  
+  span.left{float:left!important;}
+  
+  span.highlight{color:brown!important;}
+  
+  h2{font-size:1.7rem!important;}
+  h3{color:brown!important;}
+    ---------------**/
+  /*Want these lines single-spaced
+  p { line-height: 20px!important;font-size:1.3rem!important;}*/
+  /*p.blank-line-class{line-height:14px!important;}*/

@@ -1,0 +1,221 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* define primary colors */
+/* define font */
+/**---------------
+Below are CSS items for SVG
+---------------**/
+/*Fill (Color) and Stroke (Outline) are applied to PATH*/
+svg#catnip path {
+  /*Similar to Color*/
+  fill: brown !important;
+  /*Outline effect around house svg*/
+  stroke: gold !important;
+  /*transform: rotate(45deg);*/
+  /*Thickness of Stroke (Outline) surrounding House svg.  NOTE:  Looks like % (.5, 6).  PX works, but not using here.*/
+  stroke-width: 0.2 !important;
+}
+
+/*Size apparently NOT applied to path, but to 
+  specific svg element?*/
+svg#catnip {
+  /*
+    width: 200px!important;
+    height: 200px!important;
+    */
+  width: 20% !important;
+  height: 20% !important;
+  /*Changes thickness of border of box AROUND Svg image...or color.  Not the outline, but the box AROUND the house.*/
+  /*border: 3px solid #ddd;*/
+}
+
+/*Hover now working*/
+svg#catnip path:hover {
+  fill: orange !important;
+  stroke: brown !important;
+}
+
+/**---------------
+  Below are CSS items that are NOT SVG
+
+  
+  body { 
+    background-color: #bad0b8;
+    background-image: -webkit-linear-gradient(right, #FC7864, #FDA366);
+    background-image: -moz-linear-gradient(right, #FC7864, #FDA366);
+    background-image: -o-linear-gradient(right, #FC7864, #FDA366);
+    background-image: -ms-linear-gradient(right, #FC7864, #FDA366);
+    background-image: linear-gradient(right, #FC7864, #FDA366);
+  }
+  
+  span.left{float:left!important;}
+  
+  span.highlight{color:brown!important;}
+  
+  h2{font-size:1.7rem!important;}
+  h3{color:brown!important;}
+    ---------------**/
+/*Want these lines single-spaced
+  p { line-height: 20px!important;font-size:1.3rem!important;}*/
+/*p.blank-line-class{line-height:14px!important;}*/
+body {
+  background-color: white;
+  color: black;
+  font-size: 18px;
+  font-family: "segoe ui", Helvetica, sans-serif;
+  margin: 0px;
+  text-align: justify;
+}
+
+.nav {
+  height: 50px;
+  width: 100%;
+  background-color: black;
+  position: relative;
+}
+
+.nav .nav-header {
+  display: inline;
+}
+
+.nav .nav-header .nav-title {
+  display: inline-block;
+  font-size: 22px;
+  color: white;
+  padding: 10px 10px 10px 10px;
+}
+
+.nav .nav-btn {
+  display: none;
+}
+
+.nav .nav-links {
+  display: inline;
+  font-size: 18px;
+}
+
+.nav .nav-links a {
+  display: inline-block;
+  padding: 13px 10px 13px 10px;
+  text-decoration: none;
+  color: #fff;
+}
+
+.nav .nav-links a:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.nav #nav-check {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .nav .nav-btn {
+    display: inline-block;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+  }
+  .nav .nav-btn label {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    padding: 13px;
+  }
+  .nav .nav-btn label span {
+    display: block;
+    width: 25px;
+    height: 10px;
+    border-top: 2px solid #eee;
+  }
+  .nav .nav-links {
+    position: absolute;
+    display: block;
+    width: 100%;
+    background-color: #333;
+    height: 0px;
+    -webkit-transition: all 0.3s ease-in;
+    transition: all 0.3s ease-in;
+    overflow-y: hidden;
+    top: 50px;
+    left: 0px;
+  }
+  .nav .nav-links a {
+    display: block;
+    width: 100%;
+  }
+  .nav > .nav-btn > label:hover, .nav #nav-check:checked ~ .nav-btn > label {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  .nav > #nav-check:not(:checked) ~ .nav-links {
+    height: 0px;
+  }
+  .nav > #nav-check:checked ~ .nav-links {
+    height: calc(100vh - 50px);
+    overflow-y: auto;
+  }
+}
+
+footer {
+  padding: 10px 20px;
+  background: black;
+  color: white;
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+}
+
+.grid-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto auto auto;
+      grid-template-columns: auto auto auto;
+  background-color: white;
+  padding: 10px;
+}
+
+.grid-item {
+  background-color: white;
+  border: 1px solid black;
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+
+/* css */
+.column, .column2, .column3 {
+  float: left;
+  width: 33.33%;
+  padding: 10px;
+  border: 1px solid black;
+  background-color: #aaa;
+  height: 100px;
+  /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column2 {
+  background-color: #bbb;
+}
+
+.column3 {
+  background-color: #ccc;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column, .column2, .column3 {
+    width: 100%;
+  }
+}
