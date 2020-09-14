@@ -1,4 +1,3 @@
-
 const staticVersion = "dev-site-v2";
 const assets = [
   "/",
